@@ -1,0 +1,17 @@
+<!-- <div
+  *ngFor="let coffee of coffees"
+>
+  <p>{{coffee.blend_name}}</p><span> from {{coffee.origin}}</span>
+</div> -->
+
+<ag-grid-angular  
+    class="ag-theme-alpine"
+    style="width: 100%; height: 100%;"
+    [rowData]="coffees"
+    [domLayout]="domLayout" 
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [pagination]="true"
+    [paginationPageSize]="paginationPageSize"
+    (gridReady)="onGridReady($event)">
+</ag-grid-angular>
