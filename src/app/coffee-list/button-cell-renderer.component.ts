@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ICellRendererAngularComp } from 'ag-grid-angular';
@@ -11,6 +11,7 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
   template: `
     <button type="button" class="btn btn-primary btn-xs" (click)="btnClickedHandler($event)"> View Details</button>
   `,
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class BtnCellRenderer implements ICellRendererAngularComp {
   private params: any;
@@ -27,7 +28,6 @@ export class BtnCellRenderer implements ICellRendererAngularComp {
     console.log(this.params.value);
     this.params.clicked(this.params.value);
     const id = this.params.value.id;
-    // this.route.navigate(['']);
     this.route.navigate(['coffee', id]);
 
   }

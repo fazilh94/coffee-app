@@ -20,7 +20,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
   declarations: [
     AppComponent,
     CoffeeListComponent,
-    CoffeeDetailsComponent,
     CoffeeListContainerComponent
   ],
   imports: [

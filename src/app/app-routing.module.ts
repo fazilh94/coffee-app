@@ -5,8 +5,10 @@ import { CoffeeListComponent } from './coffee-list/coffee-list.component';
 import { CoffeeListContainerComponent } from './containers/coffee-list-container.component';
 
 const routes: Routes = [
-  { path: 'coffees', component: CoffeeListContainerComponent },
-  { path: 'coffee/:id', component: CoffeeDetailsComponent },
+  { path: 'coffees', component: CoffeeListContainerComponent, title:'Ngrx - CoffeeHouse' },
+  { path: 'coffee/:id',loadComponent:()=> import('./coffee-details/coffee-details.component')
+  .then(mod=>mod.CoffeeDetailsComponent),
+  title: 'Coffee - Details' },
   { path: '', redirectTo: '/coffees', pathMatch: 'full' }
 ];
 

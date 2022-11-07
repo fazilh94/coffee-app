@@ -1,24 +1,7 @@
-<aside >
-    <article class="card-body p-5">
-      <h3 class="title mb-3">{{coffee.blend_name}}</h3>
-      <dl class="item-property">
-        <dt>Origin</dt>
-        <dd><p class="text-capitalize">{{coffee.origin}}</p></dd>
-      </dl>
-      <dl class="param param-feature">
-        <dt>Variety</dt>
-        <dd class="text-capitalize">{{coffee.variety}}</dd>
-      </dl>
-      <dl class="param param-feature">
-        <dt>Intensifier</dt>
-        <dd>{{coffee.intensifier}}</dd>
-      </dl>
-      <dl class="param param-feature">
-        <dt>Notes</dt>
-        <dd>{{coffee.notes}}</dd>
-      </dl>
-      
-      <hr/>
-     
-    </article>
-  </aside>
+
+<h2>Blend Details</h2>
+<div class="coffee-details">
+<h3>{{coffee.blend_name}} is originated from {{coffee.origin}}. It has {{coffee.variety}} variety with a {{coffee.intensifier}} intensifier.
+</h3>
+<h4>Notes : {{coffee.notes}}</h4>
+</div>

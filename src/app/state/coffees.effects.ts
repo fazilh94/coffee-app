@@ -1,11 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { Store } from "@ngrx/store";
-import { catchError, filter, map, of, switchMap, withLatestFrom } from "rxjs";
+import { catchError, map, of, switchMap } from "rxjs";
 import { CoffeesService } from "../coffee-list/coffees.service";
 
-import { loadCoffee, loadCoffeeError, loadCoffees, loadCoffeesError, loadCoffeesSuccess, loadCoffeeSuccess } from "./coffees.actions";
-import { selectCoffees } from "./coffees.selectors";
+import { loadCoffees, loadCoffeesError, loadCoffeesSuccess } from "./coffees.actions";
 
 @Injectable()
 export class CoffeesEffects {
@@ -22,8 +20,7 @@ loadCoffees$ = createEffect(
 
         
     constructor(private actions$: Actions,
-        private coffeesHttpService:CoffeesService,
-        private store:Store){
+        private coffeesHttpService:CoffeesService){
 
     }
 } 

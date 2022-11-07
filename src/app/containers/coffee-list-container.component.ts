@@ -1,4 +1,4 @@
-import { OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, OnInit } from "@angular/core";
 import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { AppState } from "../state/app.state";
@@ -8,6 +8,7 @@ import { selectCoffees } from "../state/coffees.selectors";
 
 @Component({
     templateUrl:'./coffee-list-container.component.html',
+    changeDetection:ChangeDetectionStrategy.OnPush
 
 })
 export class CoffeeListContainerComponent implements OnInit{
